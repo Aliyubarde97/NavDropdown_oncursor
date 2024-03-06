@@ -1,18 +1,18 @@
-import { Children, ReactNode } from "react"
-import Navigation from "./component/Navigation/Navigation";
-import Footer from "./component/Footer/Footer";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Home from "./component/Home/Home";
+import Layout from "./component/Layout/Layout";
 
-interface LayoutProps{
-  children:ReactNode;
-}
 function App() {
   
 
   return (
     <>
-      <Navigation/>
-      {Children}
-      <Footer/>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout> <Home/> </Layout>}  />
+        <Route path="*" element={<Navigate to={'/'}/>}  />
+      </Routes>
+      </BrowserRouter>
       
     </>
   )

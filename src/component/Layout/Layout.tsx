@@ -1,8 +1,19 @@
-const Layout = () => {
+import { ReactNode } from "react"
+import Navigation from "../Navigation/Navigation"
+import Footer from "../Footer/Footer"
+
+interface LayoutProps{
+    children:ReactNode 
+}
+
+const Layout = ({children}:LayoutProps) => {
   return (
-    <div>
-      
-    </div>
+   <>
+
+<Navigation/>
+      {children}
+      <Footer/>
+   </>
   )
 }
 
